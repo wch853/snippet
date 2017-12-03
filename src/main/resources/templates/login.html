@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- headers -->
+    <title>登录</title>
+    <base href="/test/">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+    <!-- page content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div>
+                <label for="username">username:</label>
+                <input id="username">
+                <label for="password">password:</label>
+                <input id="password" type="password">
+                <input id="submit" type="button" value="submit">
+            </div>
+        </div><!--container-->
+    </div><!--page wrapped-->
+
+</div><!--wrapped-->
+<script type="text/javascript">
+    $('#submit').click(function () {
+        $.ajax({
+            url: 'login',
+            type: 'POST',
+            data: {
+                username: $('#username').val().trim(),
+                password: $('#password').val().trim()
+            },
+            success: function (res) {
+                if (res.code === 200) {
+                    window.location.href = 'index'
+                } else {
+                    alert("Login Failed!");
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

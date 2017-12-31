@@ -62,7 +62,7 @@ public class RedisConfig extends CachingConfigurerSupport {
      * @return RedisTemplate
      */
     @Bean
-    public RedisTemplate redisTemplate(RedisConnectionFactory factory) {
+    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
         /*
           RedisTemplate的key、value默认使用JdkSerializationRedisSerializer
           StringRedisTemplate的key、value默认使用StringRedisSerializer

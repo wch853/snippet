@@ -29,7 +29,6 @@ VALUES (NULL, 'iPhone X', 8999.00, 100, NULL , NULL);
 INSERT INTO test.product (id, name, price, stock, create_time, update_time)
 VALUES (NULL, 'Mac Pro', 13999.00, 100, NULL, NULL);
 
-
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id       INT          NOT NULL AUTO_INCREMENT
@@ -121,7 +120,6 @@ INSERT INTO test.permission (id, url, url_name, perm) VALUES (1, '/query', '查�
 INSERT INTO test.permission (id, url, url_name, perm) VALUES (2, '/add', '新增', 'user:add');
 INSERT INTO test.permission (id, url, url_name, perm) VALUES (3, '/update', '更新', 'user:update');
 INSERT INTO test.permission (id, url, url_name, perm) VALUES (4, '/delete', '删除', 'user:delete');
-INSERT INTO test.permission (id, url, url_name, perm) VALUES (5, '/**', '超级管理员', '*');
 
 /* user_roles */
 INSERT INTO test.user_roles (user_id, role_id) VALUES (1, 1);
@@ -129,7 +127,10 @@ INSERT INTO test.user_roles (user_id, role_id) VALUES (2, 2);
 INSERT INTO test.user_roles (user_id, role_id) VALUES (3, 3);
 
 /* role_permissions */
-INSERT INTO test.role_permissions (role_id, permission_id) VALUES (1, 5);
+INSERT INTO test.role_permissions (role_id, permission_id) VALUES (1, 1);
+INSERT INTO test.role_permissions (role_id, permission_id) VALUES (1, 2);
+INSERT INTO test.role_permissions (role_id, permission_id) VALUES (1, 3);
+INSERT INTO test.role_permissions (role_id, permission_id) VALUES (1, 4);
 INSERT INTO test.role_permissions (role_id, permission_id) VALUES (2, 1);
 INSERT INTO test.role_permissions (role_id, permission_id) VALUES (3, 1);
 INSERT INTO test.role_permissions (role_id, permission_id) VALUES (3, 2);

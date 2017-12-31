@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -61,17 +62,18 @@ public class AuthRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        SimpleAuthorizationInfo info = null;
+        // TODO 修改ssm
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        Set<String> permissions = new HashSet<>();
         try {
             // 获取身份信息
             User user = (User) principals.getPrimaryPrincipal();
             // 查询权限信息
-            Set<String> permissions = securityService.getStringPermissions(user.getId());
-            info = new SimpleAuthorizationInfo();
-            info.addStringPermissions(permissions);
+            permissions.addAll(securityService.getStringPermissions(user.getId()));
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }
+        info.addStringPermissions(permissions);
         return info;
     }
 

@@ -71,18 +71,6 @@ public class SecurityController {
     }
 
     /**
-     * unauthorizedUrl，未授权时跳转该url
-     *
-     * @return json
-     */
-    // @ExceptionHandler(UnauthorizedException.class)
-    // @RequiresAuthentication
-    // public @ResponseBody
-    // String forbidden() {
-    //     return "403";
-    // }
-
-    /**
      * 使用 @RequiresPermissions 注解来标注访问该url需要 "user:query" 权限
      *
      * @return json

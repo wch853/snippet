@@ -1,9 +1,9 @@
-package com.wch.test.aop.aspect;
+package com.wch.test.aop.aspectj;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
-public class AuthService {
+@Component
+public class AuthUtil {
 
     /**
      * 验证用户
@@ -11,7 +11,9 @@ public class AuthService {
     public void checkAccess() {
         String user = CurrentUserHolder.get();
         if (!"admin".equals(user)) {
+            System.out.println("check access failed.");
             throw new RuntimeException("operation not allow.");
         }
+        System.out.println("check access success.");
     }
 }

@@ -1,7 +1,7 @@
 package com.wch.test.aop;
 
-import com.wch.test.aop.aspect.CurrentUserHolder;
-import com.wch.test.aop.aspect.ProductService;
+import com.wch.test.aop.aspectj.CurrentUserHolder;
+import com.wch.test.aop.aspectj.service.ProductService;
 import com.wch.test.domain.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 @SpringBootTest
 public class AopTest {
 
-    @Resource
+    @Resource(name = "aopProductServiceImpl")
     private ProductService productService;
 
     @Test(expected = RuntimeException.class)
@@ -23,8 +23,19 @@ public class AopTest {
         productService.insertProduct(new Product());
     }
 
+    @Test
     public void productTest2() {
         CurrentUserHolder.set("admin");
         productService.deleteProduct(1L);
+    }
+
+    @Test
+    public void productTest3() {
+        productService.queryProduct(1L);
+    }
+
+    @Test
+    public void productTest4() {
+        productService.updateProduct(1L);
     }
 }

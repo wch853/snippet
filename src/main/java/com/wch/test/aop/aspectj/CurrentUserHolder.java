@@ -1,4 +1,4 @@
-package com.wch.test.aop.aspect;
+package com.wch.test.aop.aspectj;
 
 /**
  * 模拟用户切换

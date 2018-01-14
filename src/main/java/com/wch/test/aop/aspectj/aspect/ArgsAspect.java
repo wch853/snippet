@@ -23,4 +23,14 @@ public class ArgsAspect {
     public void before() {
         System.out.println("### before args.");
     }
+
+    /**
+     * 通过args()获取参数，与before结合可用于检验参数
+     *
+     * @param id id
+     */
+    @Before("matchArgs() && args(id)")
+    public void getArgsBefore(Long id) {
+        System.out.println("### before get args, id = " + id + ".");
+    }
 }

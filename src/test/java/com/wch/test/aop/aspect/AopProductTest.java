@@ -1,4 +1,4 @@
-package com.wch.test.aop;
+package com.wch.test.aop.aspect;
 
 import com.wch.test.aop.aspectj.CurrentUserHolder;
 import com.wch.test.aop.aspectj.service.ProductService;
@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AopTest {
+public class AopProductTest {
 
     @Resource(name = "aopProductServiceImpl")
     private ProductService productService;

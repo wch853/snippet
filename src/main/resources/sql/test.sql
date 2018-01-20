@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS test;
+CREATE DATABASE test;
 USE test;
 
 /* 测试产品表 */
@@ -9,7 +11,7 @@ CREATE TABLE product (
   COMMENT '产品名称',
   price       DECIMAL(10, 2) NOT NULL  DEFAULT 0
   COMMENT '产品价格',
-  stock       BIGINT            NOT NULL  DEFAULT 0
+  stock       INT            NOT NULL  DEFAULT 0
   COMMENT '产品库存',
   create_time TIMESTAMP      NOT NULL  DEFAULT '0000-00-00 00:00:00'
   COMMENT '创建时间',

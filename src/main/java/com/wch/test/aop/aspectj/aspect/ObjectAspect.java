@@ -25,7 +25,7 @@ public class ObjectAspect {
     /**
      * 匹配实现指定接口的对象
      */
-    @Pointcut("target(com.wch.test.aop.aspectj.service.ProductService)")
+    @Pointcut("target(com.wch.test.aop.aspectj.service.AopProductService)")
     public void matchTarget() {
     }
 

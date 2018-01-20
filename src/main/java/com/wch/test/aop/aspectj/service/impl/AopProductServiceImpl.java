@@ -1,12 +1,12 @@
 package com.wch.test.aop.aspectj.service.impl;
 
 import com.wch.test.aop.aspectj.AdminOnly;
-import com.wch.test.aop.aspectj.service.ProductService;
+import com.wch.test.aop.aspectj.service.AopProductService;
 import com.wch.test.domain.Product;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AopProductServiceImpl implements ProductService {
+public class AopProductServiceImpl implements AopProductService {
 
     // @Resource
     // private AuthUtil authUtil;

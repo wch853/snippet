@@ -1,8 +1,8 @@
 package com.wch.test.web;
 
+import com.wch.test.domain.Result;
 import com.wch.test.domain.User;
 import com.wch.test.enums.ResultEnum;
-import com.wch.test.utils.Result;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.ShiroException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -10,13 +10,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
+//@Controller
 public class SecurityController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SecurityController.class);

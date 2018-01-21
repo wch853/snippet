@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * JPA操作对象
+ * // TODO JPA对象的属性不可为对象
  */
 public interface PersonRepository extends JpaRepository<Person, Integer> {
 

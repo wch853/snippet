@@ -1,7 +1,7 @@
 package com.wch.test.web;
 
 import com.wch.test.enums.ResultEnum;
-import com.wch.test.utils.Result;
+import com.wch.test.domain.Result;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

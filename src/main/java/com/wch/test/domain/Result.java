@@ -1,4 +1,4 @@
-package com.wch.test.utils;
+package com.wch.test.domain;
 
 import com.wch.test.enums.ResultEnum;
 

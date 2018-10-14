@@ -7,3 +7,5 @@ target/
 *.ipr
 
 application.yml
+application.properties
+config.properties

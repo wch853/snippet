@@ -18,6 +18,7 @@
         <module>shiro</module>
         <module>amq</module>
         <module>snippet-spring-origin</module>
+        <module>mp-api</module>
     </modules>
 
     <parent>

@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  context-path: /shiro
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/snippet?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: admin
+    type: com.alibaba.druid.pool.DruidDataSource
+  freemarker:
+    suffix: .html
+
+mybatis:
+  type-aliases-package: com.wch.shiro.domain
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

@@ -10,7 +10,7 @@ public interface IdentityTask<T> extends Task<T> {
     /**
      * 任务标记
      *
-     * @return
+     * @return identity
      */
     String identity();
 }

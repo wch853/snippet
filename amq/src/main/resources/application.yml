@@ -1,0 +1,8 @@
+queue:
+  test: queue.test
+
+topic:
+  test: topic.test
+
+consumer:
+  concurrency: 1-3

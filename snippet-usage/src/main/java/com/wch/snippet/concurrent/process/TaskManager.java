@@ -11,17 +11,17 @@ public class TaskManager {
     /**
      * CPU核数
      */
-    private static final int DEFAULT_CORE_SIZE = Runtime.getRuntime().availableProcessors();
+    private static final int AVAILABLE_PROCESSORS = Runtime.getRuntime().availableProcessors();
 
     /**
      * 默认核心线程数
      */
-    private static final int DEFAULT_CORE_POOL_SIZE = DEFAULT_CORE_SIZE * 2;
+    private static final int DEFAULT_CORE_POOL_SIZE = AVAILABLE_PROCESSORS * 2;
 
     /**
      * 默认最大线程数
      */
-    private static final int DEFAULT_MAXIMUM_POOL_SIZE = DEFAULT_CORE_SIZE * 2;
+    private static final int DEFAULT_MAXIMUM_POOL_SIZE = AVAILABLE_PROCESSORS * 2;
 
     private static final String DEFAULT_BUSINESS_DOMAIN = "DefaultBusinessDomain";
 

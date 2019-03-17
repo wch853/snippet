@@ -16,7 +16,7 @@ public interface Constants {
     /**
      * 验证码 form name
      */
-    String CAPTCHA_FORM_NAME = "verification";
+    String CAPTCHA_FORM_NAME = "captcha";
 
     /**
      * username form name

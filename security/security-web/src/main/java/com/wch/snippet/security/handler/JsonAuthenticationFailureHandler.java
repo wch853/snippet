@@ -6,7 +6,6 @@ import com.wch.snippet.security.vo.ResponseVo;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ import java.io.IOException;
  * 认证失败json处理器
  * @author wch
  */
-@Component
+// @Component
 public class JsonAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
     @Override

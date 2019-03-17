@@ -1,7 +1,7 @@
 package com.wch.shiro.controller;
 
-import com.wch.snippet.util.Response;
-import com.wch.snippet.util.ResponseDefinition;
+import com.wch.shiro.util.Response;
+import com.wch.shiro.util.ResponseDefinition;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

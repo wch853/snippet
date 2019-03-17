@@ -1,10 +1,9 @@
 package com.wch.snippet.security.controller;
 
-import com.wch.snippet.security.config.properties.CustomSecurityProperties;
+import com.wch.snippet.security.config.properties.FormSecurityProperties;
 import com.wch.snippet.security.utils.Constants;
 import com.wch.snippet.security.verification.Captcha;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
@@ -17,17 +16,16 @@ import java.io.IOException;
  *
  * @author wch
  */
-@RestController("/verification")
+// @RestController
 public class VerificationCodeController {
 
     @Resource
-    private CustomSecurityProperties securityProperties;
+    private FormSecurityProperties securityProperties;
 
     @GetMapping("/captcha")
     public void captcha(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 生成图形验证码
-        Captcha captcha =
-                Captcha.create(securityProperties.getCaptcha().getWidth(),
+        Captcha captcha = Captcha.create(securityProperties.getCaptcha().getWidth(),
                         securityProperties.getCaptcha().getHeight(),
                         securityProperties.getCaptcha().getLength(),
                         securityProperties.getCaptcha().getExpireIn());

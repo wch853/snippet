@@ -48,7 +48,7 @@ public class MockTest extends SpringTestBase {
     }
 
     public void testUpload() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/file/upload")
+        this.mockMvc.perform(MockMvcRequestBuilders.multipart("/file/upload")
                 .file(new MockMultipartFile("file", "file.txt",
                         ContentType.MULTIPART_FORM_DATA.getMimeType(),
                         "text".getBytes(StandardCharsets.UTF_8))))

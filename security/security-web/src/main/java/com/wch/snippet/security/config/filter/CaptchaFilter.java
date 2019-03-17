@@ -1,6 +1,6 @@
 package com.wch.snippet.security.config.filter;
 
-import com.wch.snippet.security.config.properties.CustomSecurityProperties;
+import com.wch.snippet.security.config.properties.FormSecurityProperties;
 import com.wch.snippet.security.exception.CaptchaException;
 import com.wch.snippet.security.utils.Constants;
 import com.wch.snippet.security.verification.Captcha;
@@ -39,7 +39,7 @@ public class CaptchaFilter extends OncePerRequestFilter {
      */
     private RequestMatcher requireCaptchaValidateMatcher;
 
-    public CaptchaFilter(CustomSecurityProperties securityProperties, AuthenticationFailureHandler failureHandler) {
+    public CaptchaFilter(FormSecurityProperties securityProperties, AuthenticationFailureHandler failureHandler) {
         this.requireCaptchaValidateMatcher =
                 new AntPathRequestMatcher(securityProperties.getLogin().getProcess(), HttpMethod.POST.name());
         this.failureHandler = failureHandler;

@@ -1,8 +1,8 @@
 package com.wch.shiro.controller;
 
 import com.wch.shiro.domain.User;
-import com.wch.snippet.util.Response;
-import com.wch.snippet.util.ResponseDefinition;
+import com.wch.shiro.util.Response;
+import com.wch.shiro.util.ResponseDefinition;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.ShiroException;

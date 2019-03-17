@@ -7,6 +7,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * Redis连接
+ * TODO 转为新API
  */
 public class JedisDemo {
 

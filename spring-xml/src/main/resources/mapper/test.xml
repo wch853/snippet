@@ -5,5 +5,8 @@
 
 <mapper namespace="test">
 
+    <resultMap id="" type="">
+
+    </resultMap>
 
 </mapper>

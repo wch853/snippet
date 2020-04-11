@@ -13,7 +13,8 @@
 
     <select id="selectRoles" resultType="Role">
         SELECT r.id AS id, r.role_name AS role_name
-        FROM user_roles ur LEFT JOIN roles r ON ur.role_id = r.id
+        FROM user_roles ur
+                 LEFT JOIN roles r ON ur.role_id = r.id
         WHERE ur.user_id = #{userId}
     </select>
 
@@ -28,10 +29,12 @@
 
     <select id="selectStringPermissions" resultType="java.lang.String">
         SELECT p.perm
-        FROM role_permissions rp LEFT JOIN permission p ON rp.permission_id = p.id
+        FROM role_permissions rp
+                 LEFT JOIN permission p ON rp.permission_id = p.id
         WHERE rp.role_id IN (SELECT r.id
-        FROM user_roles ur LEFT JOIN roles r ON ur.role_id = r.id
-        WHERE ur.user_id = #{userId})
+                             FROM user_roles ur
+                                      LEFT JOIN roles r ON ur.role_id = r.id
+                             WHERE ur.user_id = #{userId})
     </select>
 
 </mapper>

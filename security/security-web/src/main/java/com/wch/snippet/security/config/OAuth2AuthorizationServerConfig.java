@@ -11,7 +11,6 @@ import org.springframework.security.oauth2.config.annotation.builders.InMemoryCl
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
@@ -27,7 +26,6 @@ import java.util.Arrays;
  */
 @Configuration
 @EnableAuthorizationServer
-@EnableResourceServer
 public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     /**
@@ -106,12 +104,10 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.passwordEncoder(passwordEncoder());
-
         // check_token 接口访问权限
-        security.checkTokenAccess("isAuthenticated()");
+        security.checkTokenAccess("authenticated");
         // token_key 接口访问权限
-        security.tokenKeyAccess("isAuthenticated()");
+        security.tokenKeyAccess("authenticated");
         security.realm("security");
     }
 

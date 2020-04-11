@@ -1,8 +1,8 @@
 package com.wch.shiro.service;
 
-import com.wch.shiro.domain.User;
 import com.wch.shiro.domain.Permission;
 import com.wch.shiro.domain.Role;
+import com.wch.shiro.domain.User;
 
 import java.util.List;
 import java.util.Set;

@@ -26,9 +26,9 @@ public class VerificationCodeController {
     public void captcha(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 生成图形验证码
         Captcha captcha = Captcha.create(securityProperties.getCaptcha().getWidth(),
-                        securityProperties.getCaptcha().getHeight(),
-                        securityProperties.getCaptcha().getLength(),
-                        securityProperties.getCaptcha().getExpireIn());
+                securityProperties.getCaptcha().getHeight(),
+                securityProperties.getCaptcha().getLength(),
+                securityProperties.getCaptcha().getExpireIn());
         // 将验证码信息放入 session
         request.getSession().setAttribute(Constants.CAPTCHA_CODE, captcha);
 

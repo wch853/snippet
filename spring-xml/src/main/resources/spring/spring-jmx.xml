@@ -17,9 +17,9 @@
         <!--<property name="autodetect" value="true"/>-->
         <!-- 配置纳入JMX管理的bean -->
         <!--<property name="beans">-->
-            <!--<map>-->
-                <!--<entry key="com.wch.jmx:name=Hello" value-ref="hello"/>-->
-            <!--</map>-->
+        <!--<map>-->
+        <!--<entry key="com.wch.jmx:name=Hello" value-ref="hello"/>-->
+        <!--</map>-->
         <!--</property>-->
         <!-- 设置被管理bean的暴露方式 -->
         <property name="assembler" ref="assembler"/>
@@ -29,7 +29,7 @@
 
     <!-- 基于方法集合的暴露方式 -->
     <!--<bean id="assembler" class="org.springframework.jmx.export.assembler.MethodNameBasedMBeanInfoAssembler">-->
-        <!--<property name="managedMethods" value="setName,setAge"/>-->
+    <!--<property name="managedMethods" value="setName,setAge"/>-->
     <!--</bean>-->
 
     <!-- 基于接口定制的暴露方式 -->

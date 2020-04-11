@@ -1,7 +1,14 @@
 package com.wch.shiro.util;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
+/**
+ *
+ * @param <T>
+ */
+@Data
 public class Response<T> implements Serializable {
 
     private boolean success;
@@ -27,39 +34,7 @@ public class Response<T> implements Serializable {
         return new Response<>(definition.isSuccess(), definition.getCode(), definition.getMessage(), data);
     }
 
-    public static <T> Response buildResponse(ResponseDefinition definition, String message) {
+    public static Response buildResponse(ResponseDefinition definition, String message) {
         return new Response<>(definition.isSuccess(), definition.getCode(), message, null);
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 }

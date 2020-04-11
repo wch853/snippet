@@ -14,6 +14,6 @@ public class JmsTest {
     private AmqSender amqSender;
 
     public void jmsTest() {
-        amqSender.sendTextMessage(0,"test");
+        amqSender.sendTextMessage(0, "test");
     }
 }

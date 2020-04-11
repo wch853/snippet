@@ -43,23 +43,23 @@ public class ResponseVo<T> implements Serializable {
         this.data = data;
     }
 
-    public static <T> ResponseVo setResponse(boolean success, int code, String msg, T data) {
+    public static <T> ResponseVo<T> setResponse(boolean success, int code, String msg, T data) {
         return new ResponseVo<>(success, code, msg, data);
     }
 
-    public static <T> ResponseVo setResponse(ResponseEnum responseEnum, T data) {
+    public static <T> ResponseVo<T> setResponse(ResponseEnum responseEnum, T data) {
         return setResponse(responseEnum.getSuccess(), responseEnum.getCode(), responseEnum.getMsg(), data);
     }
 
-    public static ResponseVo setResponse(ResponseEnum responseEnum) {
+    public static <T> ResponseVo<T> setResponse(ResponseEnum responseEnum) {
         return setResponse(responseEnum.getSuccess(), responseEnum.getCode(), responseEnum.getMsg(), null);
     }
 
-    public static ResponseVo setResponse(ResponseEnum responseEnum, String msg) {
+    public static <T> ResponseVo<T> setResponse(ResponseEnum responseEnum, String msg) {
         return setResponse(responseEnum.getSuccess(), responseEnum.getCode(), msg, null);
     }
 
-    public static ResponseVo dynamicResponse(ResponseEnum responseEnum, String msg) {
+    public static <T> ResponseVo<T> dynamicResponse(ResponseEnum responseEnum, String msg) {
         return setResponse(responseEnum, msg);
     }
 }

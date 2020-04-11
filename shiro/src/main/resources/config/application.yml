@@ -1,6 +1,7 @@
 server:
   port: 8080
-  context-path: /shiro
+  servlet:
+    context-path: /shiro
 
 spring:
   datasource:

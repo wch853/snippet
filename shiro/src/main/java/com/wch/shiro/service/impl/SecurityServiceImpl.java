@@ -1,11 +1,11 @@
 package com.wch.shiro.service.impl;
 
 
-import com.wch.shiro.service.SecurityService;
 import com.wch.shiro.domain.Permission;
 import com.wch.shiro.domain.Role;
 import com.wch.shiro.domain.User;
 import com.wch.shiro.mapper.SecurityMapper;
+import com.wch.shiro.service.SecurityService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

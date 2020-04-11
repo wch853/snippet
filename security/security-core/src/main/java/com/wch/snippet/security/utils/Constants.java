@@ -2,6 +2,7 @@ package com.wch.snippet.security.utils;
 
 /**
  * 常量
+ *
  * @author wch
  */
 public interface Constants {

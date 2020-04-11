@@ -18,7 +18,7 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
-    <!-- 注册sqlSessionFactory -->
+    <!-- 注册 sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:config/mybatis-config.xml"/>
@@ -35,7 +35,7 @@
     <!-- 配置dao接口扫描，配置sqlSessionTemplate，不使用动态代理 -->
     <!--<context:component-scan base-package="com.wch.base.mapper"/>-->
     <!--<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">-->
-        <!--<constructor-arg ref="sqlSessionFactory"/>-->
+    <!--<constructor-arg ref="sqlSessionFactory"/>-->
     <!--</bean>-->
 
     <!-- redis -->
@@ -51,7 +51,8 @@
 
     <bean id="jedisPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig"/>
 
-    <bean id="jedisClientConfig" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory.MutableJedisClientConfiguration">
+    <bean id="jedisClientConfig"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory.MutableJedisClientConfiguration">
         <property name="poolConfig" ref="jedisPoolConfig"/>
         <property name="usePooling" value="true"/>
     </bean>

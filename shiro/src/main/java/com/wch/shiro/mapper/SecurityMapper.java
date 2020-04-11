@@ -37,6 +37,7 @@ public interface SecurityMapper {
 
     /**
      * 查询指定用户拥有的权限
+     *
      * @param userId userId
      * @return StringPermissions
      */

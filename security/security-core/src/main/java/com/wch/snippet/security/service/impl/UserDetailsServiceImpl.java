@@ -32,6 +32,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User(username, PASS, AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+        return new User(username, PASS, AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_ADMIN"));
     }
 }
